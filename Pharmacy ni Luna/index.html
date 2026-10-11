@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Luna's Pharmacy — Inventory & Stockpile</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="app">
+    <aside>
+      <div class="brand">Luna's Pharmacy 🌙<small>Inventory & stockpile</small></div>
+      <button class="nav" data-v="dash">Overview</button>
+      <button class="nav" data-v="inv">Inventory</button>
+      <button class="nav" data-v="stock">Restock <b id="rb"></b></button>
+      <button class="nav" data-v="log">Movements</button>
+      <div class="sp"></div>
+      <button class="nav" id="reset">Reset sample data</button>
+    </aside>
+    <main id="main"></main>
+  </div>
+
+  <dialog id="dp">
+    <h2 id="dpt"></h2>
+    <div class="fg">
+      <label class="full">Product name<input id="f_name" /></label>
+      <label>Strength / size<input id="f_str" /></label>
+      <label>Category<select id="f_cat"></select></label>
+      <label>Price (₱)<input id="f_price" type="number" min="0" step="0.5" /></label>
+      <label>Stock on hand<input id="f_qty" type="number" min="0" /></label>
+      <label>Reorder level<input id="f_re" type="number" min="0" /></label>
+      <label>Target stock<input id="f_tg" type="number" min="1" /></label>
+      <label>Expiry date<input id="f_exp" type="date" /></label>
+    </div>
+    <div class="dact">
+      <button class="btn ghost" id="dpx">Cancel</button><button class="btn" id="dps">Save product</button>
+    </div>
+  </dialog>
+
+  <dialog id="da">
+    <h2 id="dat"></h2>
+    <div class="fg">
+      <label>Quantity<input id="a_q" type="number" min="1" value="10" /></label>
+      <label>Note<input id="a_n" placeholder="Supplier, sale, damage…" /></label>
+    </div>
+    <div class="dact">
+      <button class="btn ghost" id="dax">Cancel</button><button class="btn" id="das">Save</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
